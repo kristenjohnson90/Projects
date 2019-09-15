@@ -106,6 +106,63 @@ for x in nested:
             ind.append(y)
 print(ind)
 
+# map
+nums = ['1','2','3']
+new_nums = list(map(int, nums))
+print(new_nums)
 
 
+# filter
+def keep_evens(nums):
+    new_seq = filter(lambda num: num % 2 == 0, nums)
+    return list(new_seq)
 
+print(keep_evens([3, 4, 6, 7, 0, 1]))
+
+
+# list comprehension
+# [<transformation> for <var> in <seq> if <filter>]
+things = [1, 2, 3, 4, 5]
+new_list = [value * 2 for value in things]
+new_list = list(map(lambda value: value * 2, things))
+print("List comprehension: {}".format(new_list))
+
+def keep_evens2(nums):
+    new_seq = [num for num in nums if num % 2 == 0]
+    return new_seq
+
+print(keep_evens2([3, 4, 6, 7, 0, 1]))
+
+
+# zip
+L1 = [1, 2, 3]
+L2 = [4, 5, 6]
+L3 = [x1 + x2 for (x1,x2) in list(zip(L1, L2))]
+print(L3)
+
+
+# Class
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+    def __init__(self, initX, initY):
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __str__(self):
+        return 'Point ({},{})'.format(self.x, self.y)
+
+
+p = Point(7,6)
+print(p.getX())
+print(p.getY())
+print(p.distanceFromOrigin())
+print(p)
