@@ -38,6 +38,6 @@ for i in range(0, len(keys)):
     review_list.append(df)
 
 all_reviews = pd.concat(review_list)
-print(all_reviews.head(100))
+# print(all_reviews.head(20))
 
 all_reviews.to_csv('rep_loop.csv', encoding='utf-8-sig')
